@@ -1,0 +1,89 @@
+@import './mixins.scss';
+@import './variables.scss';
+
+.header {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.header__logo {
+  position: absolute;
+  top: 70px;
+  left: 70px;
+  z-index: 10;
+  &__image {
+    width: 70px;
+  }
+}
+
+.header__body {
+  z-index: 5;
+  height: 100%;
+  background-image: linear-gradient($linerGradientGreen),
+    url('../img/hero-small.jpg');
+  @include bgStyle;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+
+.header__content {
+  height: 100%;
+  @include flex(center, center, column);
+  text-transform: uppercase;
+  color: $colorWhite;
+
+  &__span1 {
+    display: block;
+    padding-bottom: 12px;
+    font-size: 60px;
+    letter-spacing: 35px;
+  }
+  &__span2 {
+    padding-left: 12px;
+    letter-spacing: 15px;
+    font-size: 22px;
+  }
+
+  &__a {
+    margin-top: 60px;
+    @include roundLinkStyle($colorWhite, #777);
+    &:hover {
+      transform: translateY(-3px);
+      animation: pulse-purple-1 2s;
+    }
+    &:focus {
+      outline: transparent;
+    }
+  }
+
+  @keyframes pulse-purple-1 {
+    0% {
+      box-shadow: 0 0 0 0 $colorWhite;
+    }
+
+    30%,
+    100% {
+      box-shadow: 0 0 0 26px transparent;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header__content {
+    &__span1 {
+      font-size: 38px;
+      letter-spacing: 5px;
+    }
+    &__span2 {
+      font-size: 20px;
+      letter-spacing: 5px;
+    }
+    &__h1 {
+      text-align: center;
+    }
+    &__a {
+      width: 200px;
+      font-size: 12px;
+    }
+  }
+}

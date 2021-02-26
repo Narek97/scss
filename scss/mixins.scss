@@ -1,0 +1,72 @@
+@mixin flex($content, $items, $direction) {
+  display: flex;
+  justify-content: $content;
+  align-items: $items;
+  flex-direction: $direction;
+}
+
+@mixin bgStyle {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+@mixin headerTextAnimation {
+  display: inline-block;
+  font-size: 35px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: 0.2s;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  &:hover {
+    text-shadow: 0.5rem 1rem 2rem #04040433;
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+  }
+}
+
+@mixin roundLinkStyle($bgColor, $color) {
+  width: 250px;
+  padding: 20px 40px;
+  border-radius: 40px;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: $bgColor;
+  color: $color;
+}
+
+@mixin linkStyle {
+  border: none;
+  cursor: pointer;
+  border-bottom: 1px solid #56c679;
+  padding-bottom: 5px;
+  color: #56c679;
+  background-color: transparent;
+  font-size: 15px;
+  transition: 0.3s;
+  text-decoration: none;
+  &:focus {
+    outline: transparent;
+  }
+  &:hover {
+    transform: translateY(-5px);
+    padding: 3px;
+    background-color: #56c679;
+    color: $colorWhite;
+  }
+}
+
+@mixin  cardImgStyle {
+  background-blend-mode: screen;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}

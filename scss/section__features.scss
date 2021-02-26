@@ -1,0 +1,61 @@
+@import './mixins.scss';
+@import './variables.scss';
+
+.section__features {
+  @include flex(center, center, none);
+  width: 100%;
+  padding: 200px 0;
+  margin-top: -100px;
+  transform: skewY(-7deg);
+  z-index: 2;
+  background-image: linear-gradient($linerGradientGreen),
+    url('../img/nat-4.jpg');
+  @include bgStyle;
+
+  &__row {
+    max-width: 1188px;
+    margin: 0 auto;
+    @include flex(center, center, none);
+    transform: skewY(7deg);
+    line-height: 1.7;
+    color: #777;
+  }
+
+  &__content {
+    @include flex(center, center, column);
+    padding: 30px 20px;
+    margin: 0 30px;
+    border-radius: 5px;
+    transition: 0.4s;
+
+    background-color: rgba(255, 255, 255, 0.8);
+    &:hover {
+      transform: translateY(-1.5rem) scale(1.03);
+    }
+    i {
+      font-size: 60px;
+      margin-bottom: 20px;
+      color: #72ccab;
+    }
+    h3 {
+      padding: 20px 0;
+      text-align: center;
+    }
+    p {
+      text-align: center;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .section__features {
+    padding: 60px 0px;
+    &__row {
+      max-width: 500px;
+      @include flex(center, center, column);
+    }
+    &__content {
+      margin-top: 56px;
+    }
+  }
+}

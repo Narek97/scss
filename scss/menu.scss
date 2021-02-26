@@ -1,0 +1,145 @@
+@import './variables.scss';
+
+#check-menu {
+  display: none;
+}
+
+.burger-line {
+  position: fixed;
+  margin-top: 75px;
+  top: 8px;
+  right: 76px;
+  width: 35px;
+  height: 3px;
+  background-color: rgb(0, 0, 0);
+  transition: 0.5s all;
+  z-index: 200;
+}
+
+.second,
+.third {
+  top: 18px;
+}
+
+.fourth {
+  top: 28px;
+}
+
+.label {
+  position: relative;
+  position: fixed;
+  top: 60px;
+  right: 60px;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  z-index: 200;
+  line-height: 40px;
+  border-radius: 50%;
+  background-color: $colorWhite;
+  box-shadow: 0.5rem 1rem 2rem #04040433;
+  &:hover {
+    ::before {
+      top: -10px;
+    }
+    ::after {
+      top: 10px;
+    }
+  }
+}
+
+.navigation__background {
+  position: fixed;
+  top: 60px;
+  right: 60px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-image: radial-gradient(#7ed56f, #28b485);
+  transition: transform 0.8s;
+  z-index: 100;
+}
+
+.menu__list {
+  position: fixed;
+  top: 130px;
+  display: none;
+  text-align: center;
+  list-style-type: none;
+  z-index: 150;
+  width: 95%;
+  button {
+    margin: 10px;
+    padding: 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: none;
+    color: $colorWhite;
+    background-image: linear-gradient(
+      120deg,
+      transparent 0%,
+      transparent 50%,
+      $colorWhite 50%
+    );
+    background-size: 220%;
+    transition: 0.3s;
+    &:hover {
+      cursor: pointer;
+      background-position: 100%;
+      color: $colorGreen57a;
+      transform: translateX(1rem);
+    }
+  }
+}
+
+.navigation__icon {
+  position: relative;
+  margin-left: 20px;
+  margin-top: 35px;
+  width: 30px;
+  height: 2px;
+  background-color: #333;
+  display: inline-block;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    transition: all 0.2s;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    display: inline-block;
+  }
+  &::before {
+    top: -8px;
+  }
+  &::after {
+    top: 8px;
+  }
+}
+
+#check-menu:checked ~ .first {
+  display: none;
+}
+#check-menu:checked ~ .navigation__background {
+  transform: scale(80);
+}
+#check-menu:checked ~ .menu__list {
+  display: block;
+}
+
+#check-menu:checked + .label .navigation__icon {
+  background: transparent;
+}
+
+#check-menu:checked + .label .navigation__icon::after {
+  top: 0;
+  transform: rotate(-135deg);
+}
+
+#check-menu:checked + .label .navigation__icon::before {
+  top: 0;
+  transform: rotate(135deg);
+}

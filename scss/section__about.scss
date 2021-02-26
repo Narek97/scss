@@ -1,0 +1,125 @@
+@import './mixins.scss';
+@import './variables.scss';
+
+.section--about {
+  width: 100%;
+  padding: 286px 0 50px;
+  margin-top: -156px;
+  background-color: #f7f7f7;
+  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+  &__heading {
+    text-align: center;
+  }
+  &__text {
+    @include headerTextAnimation;
+  }
+
+  &__container {
+    @include flex(center, none, none);
+    padding: 80px 0 180px;
+    color: #777;
+  }
+
+  &__text--content {
+    width: 500px;
+    padding-top: 20px;
+    margin-right: 40px;
+    h3 {
+      padding-bottom: 20px;
+      font-size: 16px;
+    }
+    p {
+      padding-bottom: 40px;
+      line-height: 1.7;
+    }
+  }
+
+  &__images--content {
+    width: 500px;
+    margin-left: 40px;
+    position: relative;
+    img {
+      position: absolute;
+      box-shadow: 0.5rem 1rem 2rem #04040433;
+      &:hover {
+        outline: 15px solid $colorGreen57a;
+        outline-offset: 15px;
+        transform: scale(1.1);
+        z-index: 10;
+      }
+      transition: 0.3s;
+    }
+    &__img2 {
+      top: 15%;
+      right: 0;
+    }
+    &__img3 {
+      top: 40%;
+      right: 20%;
+    }
+  }
+
+  &__link {
+    @include linkStyle;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .section--about {
+    &__container {
+      @include flex(center, center, column);
+    }
+    &__text--content {
+      max-width: 50%;
+      margin-right: 0;
+    }
+    &__images--content {
+      max-width: 100%;
+      height: 200px;
+      margin-left: 0;
+      img {
+        transform: scale(0.5);
+        &:hover {
+          transform: scale(0.4);
+        }
+      }
+      &__img1 {
+        top: 5%;
+        left: -6%;
+      }
+      &__img2 {
+        top: 8%;
+        right: -6%;
+      }
+      &__img3 {
+        top: 0;
+        left: 20%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .section--about {
+    padding: 186px 0 50px;
+    &__text {
+      font-size: 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .section--about {
+    &__text--content {
+      max-width: 90%;
+    }
+    &__images--content {
+      img {
+        transform: scale(0.4);
+        &:hover {
+          transform: scale(0.3);
+        }
+      }
+    }
+  }
+}
