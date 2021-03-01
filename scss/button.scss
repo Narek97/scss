@@ -39,19 +39,19 @@
   }
 }
 
-// .btn--animated {
-//   animation: moveInBottom 0.5s ease-out 0.75s;
-//   animation-fill-mode: backwards;
-// }
+.btn--animated {
+  animation: moveInBottom 0.5s ease-out 0.25s;
+  animation-fill-mode: backwards;
+}
 
-// @keyframes moveInBottom {
-//   0% {
-//     opacity: 0;
-//     transform: translateY(3rem);
-//   }
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
 
-//   100% {
-//     opacity: 1;
-//     transform: translate(0);
-//   }
-// }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
