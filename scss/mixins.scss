@@ -28,21 +28,6 @@
   }
 }
 
-@mixin roundLinkStyle($bgColor, $color) {
-  width: 250px;
-  padding: 20px 40px;
-  border-radius: 40px;
-  border: none;
-  font-size: 15px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  cursor: pointer;
-  background-color: $bgColor;
-  color: $color;
-}
-
 @mixin linkStyle {
   border: none;
   cursor: pointer;
@@ -64,7 +49,7 @@
   }
 }
 
-@mixin  cardImgStyle {
+@mixin cardImgStyle {
   background-blend-mode: screen;
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   border-top-left-radius: 3px;
